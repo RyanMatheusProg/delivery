@@ -1,0 +1,34 @@
+<div class="right">
+  <a class="button" href="#add_item">Adicionar Entregas</a>
+</div>
+<div class="card p-0">
+  <div class="tab">
+    <button class="tablinks active" data-to="0">Hoje</button>
+    <button class="tablinks" data-to="1">Semanal</button>
+    <button class="tablinks" data-to="2">Mensal</button>
+  </div>
+  <div class="tabcontent" style="display: block;">
+    <p>Ganhos</p>
+    <p class="title">{{ today.credit|format_currency }}</p>
+    <p>Melhor Plataforma: {{ platform(today.bestPlatform) }} </p>
+  </div>
+  <div class="tabcontent">
+    <p>Ganhos</p>
+    <p class="title">{{ week.credit|format_currency }}</p>
+    <p>Melhor Plataforma: {{ platform(week.bestPlatform) }}</p>
+    <div style="padding: 10px">
+      <div class="x-chart" data-chart={{ week.chart|json }}></div>
+    </div>
+  </div>
+  <div class="tabcontent">
+    <p>Ganhos</p>
+    <p class="title">{{ month.credit|format_currency }}</p>
+    <p>Melhor Plataforma: {{ platform(month.bestPlatform) }}</p>
+    <div style="padding: 10px">
+      <div class="x-chart" data-chart={{ month.chart|json }}></div>
+    </div>
+  </div>
+  <p style="padding: 10px">
+    <a href="#detail" class="button is-small">Detalhar</a>
+  </p>
+</div>

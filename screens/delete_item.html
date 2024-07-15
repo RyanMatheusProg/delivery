@@ -1,0 +1,28 @@
+{% if error %}
+<div>{{ error }}</div>
+{% else %}
+<div class="card">
+  <div class="subtitle"><b>Remover Entrega</b></div>
+  <form action="edit_item">
+    <div class="field">
+      <label for="platform" class="label">Plataforma</label>
+      <span class="select is-small total-width">
+        <select disabled required name="platform" id="platform" class="select control total-width">
+          <option>{{ platform(item.platform) }}</option>
+        </select>
+      </span>
+    </div>
+    <div class="field">
+      <label for="day" class="label">Horário da entrega</label>
+      <input disabled required type="datetime-local" id="day" name="day" class="input is-small" value="{{ item.day|date_input }}" max="{{ date() }}T23:59">
+    </div>
+    <div class="field">
+      <label for="money" class="label">Quantidade Obtida</label>
+      <input disabled required type="number" class="input is-small" min="0.00" id="money" name="money" step="0.01" value="{{ item.money|format_currency(true) }}"/>
+    </div>
+    <br>
+    <button type="submit" class="button is-danger">Confirmar remoção</button>
+    <a href="#edit?id={{ item.id }}&message=Remoção cancelada" class="button is-info">Cancelar</a>
+  </form>
+</div>
+{% endif %}

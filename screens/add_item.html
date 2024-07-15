@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="subtitle"><b>Adicionar Item</b></div>
+  <form action="add_item">
+    <div class="field">
+      <label for="platform" class="label">Plataforma</label>
+      <span class="select is-small total-width">
+        <select required name="platform" id="platform" class="select control total-width">
+          <option value="agilgo" selected>ÁgilGO</option>
+<option value="beedelivery">Bee Delivery</option>
+<option value="borzo">Borzo</option>
+<option value="box">Box Delivery</option>
+  <option value="ifood">Ifood</option>
+  <option value="james">James Delivery</option>
+  <option value="lalamove">Lalamove</option>
+  <option value="mercadolivre">Mercado Livre</option>
+  <option value="rappi">Rappi</option>
+  <option value="uber">Uber</option>
+  <option value="99">99</option>
+  <option value="other">Outros</option>
+</select>
+      </span>
+    </div>
+    <div class="field">
+      <label for="day" class="label">Horário da entrega</label>
+      <input required type="datetime-local" id="day" name="day" class="input is-small" value="{{ date() }}" max="{{ date() }} 23:59:59">
+    </div>
+    <div class="field">
+      <label for="money" class="label">Quantidade Obtida</label>
+      <input required type="number" class="input is-small" min="0.00" id="money" name="money" step="0.01" value="0.00"/>
+    </div>
+    <br>
+    <button type="submit" class="button is-info">Salvar</button>
+  </form>
+</div>

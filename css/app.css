@@ -1,0 +1,132 @@
+@import "./bulma.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#main {
+  background: #ddd;
+  width: 100%;
+  min-height: 100vh;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: 60px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+}
+
+.card {
+  padding: 10px;
+  background: #fff;
+  width: 100%;
+  min-height: 20px;
+  border-radius: 0;
+  margin-top: 15px;
+  box-shadow: none !important;
+}
+
+button {
+  box-shadow: none !important;
+}
+
+#screen_manager {
+  padding: 15px;
+}
+
+.total-width {
+  width:100% !important;
+}
+
+.p-0 {
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 10px !important;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover, .tab button {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+
+.input_group {
+  width: 100%;
+  display: flex;
+}
+
+.input_group input, .input_group button {
+  border-radius: 0 !important;
+}
+
+.input_group > *:first-child {
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.input_group > *:last-child {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+
+.detail_card {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail_card .icon {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  background: #bdbdbd;
+}
+
+.detail_card .icon i {
+  color: #000;
+  font-size: 24px;
+}

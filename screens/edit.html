@@ -1,0 +1,44 @@
+{% if error %}
+<div>{{ error }}</div>
+{% else %}
+{% if params.message %}
+<div class="card alert-success">
+  {{ params.message }}
+</div>
+{% endif %}
+<div class="card">
+  <div class="subtitle"><b>Editar Entrega</b></div>
+  <form action="edit_item">
+    <div class="field">
+      <label for="platform" class="label">Plataforma</label>
+      <span class="select is-small total-width">
+        <select required name="platform" id="platform" class="select control total-width">
+          <option value="agilgo" {% if item.platform == "agilgo" %}selected{% endif %}>ÁgilGO</option>
+<option value="beedelivery" {% if item.platform == "beedelivery" %}selected{% endif %}>Bee Delivery</option>
+<option value="borzo" {% if item.platform == "borzo" %}selected{% endif %}>Borzo</option>
+<option value="box" {% if item.platform == "box" %}selected{% endif %}>Box Delivery</option>
+  <option value="ifood" {% if item.platform == "ifood" %}selected{% endif %}>Ifood</option>
+  <option value="james" {% if item.platform == "james" %}selected{% endif %}>James Delivery</option>
+  <option value="lalamove" {% if item.platform == "lalamove" %}selected{% endif %}>Lalamove</option>
+  <option value="mercadolivre" {% if item.platform == "mercadolivre" %}selected{% endif %}>Mercado Livre</option>
+  <option value="rappi" {% if item.platform == "rappi" %}selected{% endif %}>Rappi</option>
+  <option value="uber" {% if item.platform == "uber" %}selected{% endif %}>Uber</option>
+  <option value="99" {% if item.platform == "99" %}selected{% endif %}>99</option>
+  <option value="other" {% if item.platform == "other" %}selected{% endif %}>Outros</option>
+</select>
+      </span>
+    </div>
+    <div class="field">
+      <label for="day" class="label">Horário da entrega</label>
+      <input required type="datetime-local" id="day" name="day" class="input is-small" value="{{ item.day|date_input }}" max="{{ date() }}T23:59">
+    </div>
+    <div class="field">
+      <label for="money" class="label">Quantidade Obtida</label>
+      <input required type="number" class="input is-small" min="0.00" id="money" name="money" step="0.01" value="{{ item.money|format_currency(true) }}"/>
+    </div>
+    <br>
+    <button type="submit" class="button is-info">Salvar</button>
+    <a href="#delete_item?id={{ item.id }}" class="button is-danger">Deletar</a>
+  </form>
+</div>
+{% endif %}
