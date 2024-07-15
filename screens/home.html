@@ -11,6 +11,9 @@
     <p>Ganhos</p>
     <p class="title">{{ today.credit|format_currency }}</p>
     <p>Melhor Plataforma: {{ platform(today.bestPlatform) }} </p>
+    <p>
+  <a href="#detail?from={{ period.today.from }}&to={{ period.today.to }}" class="button is-small">Detalhar</a>
+</p>
   </div>
   <div class="tabcontent">
     <p>Ganhos</p>
@@ -19,6 +22,9 @@
     <div style="padding: 10px">
       <div class="x-chart" data-chart={{ week.chart|json }}></div>
     </div>
+    <p>
+    <a href="#detail?from={{ period.week.from }}&to={{ period.week.to }}" class="button is-small">Detalhar</a>
+  </p>
   </div>
   <div class="tabcontent">
     <p>Ganhos</p>
@@ -27,8 +33,9 @@
     <div style="padding: 10px">
       <div class="x-chart" data-chart={{ month.chart|json }}></div>
     </div>
-  </div>
-  <p style="padding: 10px">
-    <a href="#detail" class="button is-small">Detalhar</a>
+    <p>
+    <a href="#detail?from={{ period.month.from }}&to={{ period.month.to }}" class="button is-small">Detalhar</a>
   </p>
+  </div>
+  
 </div>

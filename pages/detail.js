@@ -7,7 +7,7 @@ const from = new Date(textFrom).getTime();
 const textTo = params.to
   ? params.to
   : getMonthDates().pop()
-const to = new Date(textTo).getTime() + (24 * 60 * 60 * 1000);
+const to = new Date(textTo).getTime() + (((24 * 60 * 60) - 1) * 1000);
 
 const offset = (Number(params.page) || 1) * 25 - 25;
 let i = 0;

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function(){
   // Components
   
   document.querySelector("#title").addEventListener("click", () => {
-    app.mount("home");
+    location.href = "#home"
   })
   
   // Render

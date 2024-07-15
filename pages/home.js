@@ -63,6 +63,16 @@ for(const $d of Object.keys(week.$chart)){
   week.chart[$s[$i]] = week.$chart[$d]
 }
 
+function createPeriod(start, end){
+  return {from: start, to: end };
+}
+
+const period = {
+  today: createPeriod(todayText, todayText),
+  week: createPeriod(weekDays[0], weekDays[weekDays.length - 1]),
+  month: createPeriod(monthDays[0], monthDays[monthDays.length - 1])
+}
+
 return {
-  today, week, month
+  today, week, month, period
 }
